@@ -24,3 +24,11 @@ g.set(xticklabels=[])
 
 # Heat Map
 sns.heatmap(house_num.astype(float).corr(),linewidths=0.25,vmax=1.0, square=True, cmap="cubehelix", linecolor='k', annot=True)
+
+#https://www.kaggle.com/fhoffa/strata-london-2017-ratings-1st-exploration
+# Scatter
+ax = df.plot.scatter(x='rating',y='responses')
+ax=df[df.starthour>0].plot.scatter(x='starthour',y='responses')
+
+# Horiz Bar
+ax = dfmc[(dfmc[('rating', 'count')]>3)].sort_values([('rating', 'mean')]).plot.barh(y=('rating', 'mean'))
