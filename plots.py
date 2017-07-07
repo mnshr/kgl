@@ -32,3 +32,23 @@ ax=df[df.starthour>0].plot.scatter(x='starthour',y='responses')
 
 # Horiz Bar
 ax = dfmc[(dfmc[('rating', 'count')]>3)].sort_values([('rating', 'mean')]).plot.barh(y=('rating', 'mean'))
+
+
+# Probability Plot
+# https://www.kaggle.com/pmarcelino/comprehensive-data-exploration-with-python
+# Normal probability plot - Data distribution should closely follow the diagonal that represents the normal distribution.
+
+from scipy import stats
+res = stats.probplot(df_train['SalePrice'], plot=plt)
+
+# https://www.kaggle.com/arthurtok/sql-and-python-primer-bokeh-and-plotly
+#Bokeh
+from bokeh.plotting import figure, show
+from bokeh.charts import Bar
+from bokeh.io import output_notebook
+
+#Plotly
+import plotly.offline as py
+py.init_notebook_mode(connected=True)
+import plotly.graph_objs as go
+import plotly.tools as tls
