@@ -52,3 +52,10 @@ import plotly.offline as py
 py.init_notebook_mode(connected=True)
 import plotly.graph_objs as go
 import plotly.tools as tls
+
+# Strip plot
+#   https://www.kaggle.com/piotrplaneta/instacart-data-analysis-on-data-sample-wip
+plt.xticks(rotation='vertical')
+sns.stripplot(x="department", y="reorder_ratio", data=reorder_ratio_by_department, jitter=0.2)
+
+#https://www.kaggle.com/arthurtok/interactive-intro-to-dimensionality-reduction
