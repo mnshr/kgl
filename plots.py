@@ -59,3 +59,7 @@ plt.xticks(rotation='vertical')
 sns.stripplot(x="department", y="reorder_ratio", data=reorder_ratio_by_department, jitter=0.2)
 
 #https://www.kaggle.com/arthurtok/interactive-intro-to-dimensionality-reduction
+#https://www.kaggle.com/plarmuseau/variance-analysis-ii
+from mpl_toolkits.mplot3d import Axes3D
+fig = plt.figure(1, figsize=(12, 12))
+ax = Axes3D(fig, elev=-150, azim=110)
